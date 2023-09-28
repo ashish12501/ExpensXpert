@@ -1,0 +1,40 @@
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 15vh;
+    padding: 0px 70px 0 70px;
+}
+
+.navbarLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbuttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginButton,
+.registerButton {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.loginButton,
+.registerButton:hover {
+    cursor: pointer;
+}
+
+.registerButton {
+    border: 2px solid yellow;
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-left: 25px;
+}
