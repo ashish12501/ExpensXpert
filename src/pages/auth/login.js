@@ -9,8 +9,6 @@ import { auth, provider, fbProvider } from '../../config/firebase-config';
 
 import { signInWithPopup } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
-// APP Id 1030175948410340
-// secret a5cbce89b5575c379adf8ec5a9a5f443
 export function Login() {
     const navigate = useNavigate();
     const authenticateUsingGoogle = async () => {
