@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { useAddTransacation } from '../../hooks/useAddTransaction'
+import { useGetTransactions } from '../../hooks/ useGetTransactions'
+import { Transaction } from 'firebase/firestore';
+
 
 export function Tracker() {
 
@@ -9,6 +12,8 @@ export function Tracker() {
 
 
   const { addTransacation } = useAddTransacation();
+  const { transactions } = useGetTransactions();
+
 
   const submitTransaction = (e) => {
     e.preventDefault();
@@ -37,6 +42,24 @@ export function Tracker() {
         <label htmlFor="income">Income</label>
         <button type='submit'>Add Transaction </button>
       </form>
+
+      <div className='transactions'>
+        <h2>Transactions</h2>
+        <ul>
+          {transactions.map((transaction) => {
+            const { description, amount, type } = transaction
+            return (
+              <li>
+                <h4>{description}</h4>
+                <h2>{amount}</h2>
+                <h2>{type}</h2>
+
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+
     </div>
   )
 }
