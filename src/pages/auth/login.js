@@ -4,7 +4,6 @@ import Facebook from '../../images/facebook.png'
 import Google from '../../images/google.png'
 import User from '../../images/user.png'
 import { signInAnonymously } from 'firebase/auth'
-// import { auth, provider, fbProvider, SignInAnonymously } from '../../config/firebase-config'
 import { auth, provider, fbProvider } from '../../config/firebase-config';
 
 import { signInWithPopup } from 'firebase/auth'
