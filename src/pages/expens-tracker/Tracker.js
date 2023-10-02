@@ -3,9 +3,9 @@ import { useAddTransacation } from '../../hooks/useAddTransaction'
 
 export function Tracker() {
 
-  const { description, setDescription } = useState("");
-  const { amount, setAmount } = useState(0);
-  const { type, setType } = useState("expence");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [type, setType] = useState("expence");
 
 
   const { addTransacation } = useAddTransacation();
@@ -15,7 +15,7 @@ export function Tracker() {
     addTransacation({
       description: description,
       amount: amount,
-      type: "expence"
+      type: type
     })
   }
 
@@ -31,9 +31,9 @@ export function Tracker() {
       <form className='addTransacation' onSubmit={submitTransaction} >
         <input type="text" placeholder="description" required onChange={(e) => setDescription(e.target.value)} />
         <input type="number" placeholder="amount" required onChange={(e) => setAmount(e.target.value)} />
-        <input type="radio" id='expence' value='expence' />
+        <input type="radio" id='expence' value='expence' checked={type === "expence"} onChange={(e) => setType(e.target.value)} />
         <label htmlFor="expence">Expence</label>
-        <input type="radio" id='income' value='income' />
+        <input type="radio" id='income' value='income' checked={type === "income"} onChange={(e) => setType(e.target.value)} />
         <label htmlFor="income">Income</label>
         <button type='submit'>Add Transaction </button>
       </form>
