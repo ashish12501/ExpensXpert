@@ -12,7 +12,7 @@ export const useGetTransactions = () => {
 
     const getTransactions = async () => {
         try {
-            if (UserID) { // Check if UserID is defined
+            if (UserID) {
                 const queryTransactions = query(
                     addTransactionCollectionRef,
                     where("userID", "==", UserID),
@@ -25,8 +25,6 @@ export const useGetTransactions = () => {
                         const data = doc.data();
                         const id = doc.id;
 
-
-                        
                         docs.push({ ...data, id });
                     });
                     setTransactions(docs);
@@ -39,7 +37,7 @@ export const useGetTransactions = () => {
 
     useEffect(() => {
         getTransactions();
-    }, [UserID]); // Specify the dependency array here
+    }, [UserID]);
 
     return { transactions };
 };
