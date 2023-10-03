@@ -50,9 +50,9 @@ export function Tracker() {
             const { description, amount, type } = transaction
             return (
               <li>
-                <h4>{description}</h4>
-                <h2>{amount}</h2>
-                <h2>{type}</h2>
+                <p>{description}</p>
+                <p>{amount}</p>
+                <p>{type}</p>
 
               </li>
             )

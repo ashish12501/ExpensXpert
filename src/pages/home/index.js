@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 // import { Navbar } from '../../components/Navbar'
 import './home.css'
+import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../../App'
+
 
 export function Home() {
+    const { userData } = useContext(AppContext)
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (userData) {
+            navigate("/tracker")
+        }
+    })
     return (
         <div className='homeScreen'>
             {/* <Navbar /> */}

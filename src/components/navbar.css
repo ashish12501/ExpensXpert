@@ -19,6 +19,11 @@
     justify-content: center;
 }
 
+.navbuttons img {
+    height: 30px;
+    margin-right: 7px;
+}
+
 .loginButton,
 .registerButton {
     color: white;
