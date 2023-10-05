@@ -3,23 +3,18 @@ import logo from '../images/logo.png'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 import { AppContext } from '../App'
+import transactionIcon from '../images/transactionIcon.png'
 
 export function Navbar() {
     const { userData } = useContext(AppContext)
-    let userName = "GuestUser";
-
     if (userData) {
-        if (userData.displayName) {
-            userName = userData.displayName;
-        }
-        
         if (userData.uid) {
             return (
                 <div className='Navbar'>
                     <div className='navbarLogo'><img src={logo} alt="logo" /></div>
                     <div className='navbuttons'>
-                        <img src={userData.photoURL} alt='' />
-                        <h3> {userName} </h3>
+                        <Link to={"/transaction-history"}><img src={transactionIcon} alt="" className='listIcon' /></Link>
+                        <img src={userData.photoURL} alt='' className='profilePic' />
                     </div>
                 </div>
             )

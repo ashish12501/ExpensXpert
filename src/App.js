@@ -4,6 +4,8 @@ import { Tracker } from './pages/expens-tracker/Tracker'
 import { Home } from './pages/home/index'
 import { Navbar } from './components/Navbar'
 import { Login } from './pages/auth/login'
+import { Transaction } from './pages/transactions/transaction'
+
 import { useState, useEffect, createContext } from 'react';
 import { auth } from './config/firebase-config'
 
@@ -27,6 +29,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/tracker" element={<Tracker />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/transaction-history" element={<Transaction />} />
+
           </Routes>
         </Router>
       </AppContext.Provider>

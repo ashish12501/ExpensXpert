@@ -1,22 +1,20 @@
-import React, { useEffect, useContext } from 'react'
-// import { Navbar } from '../../components/Navbar'
+// import React, { useEffect, useContext } from 'react'
 import './home.css'
-import { useNavigate } from 'react-router-dom'
-import { AppContext } from '../../App'
+// import { useNavigate } from 'react-router-dom'
+// import { AppContext } from '../../App'
 
 
 export function Home() {
-    const { userData } = useContext(AppContext)
-    const navigate = useNavigate();
+    // const { userData } = useContext(AppContext)
+    // const navigate = useNavigate();
 
-    useEffect(() => {
-        if (userData) {
-            navigate("/tracker")
-        }
-    })
+    // useEffect(() => {
+    //     if (userData) {
+    //         navigate("/tracker")
+    //     }
+    // })
     return (
         <div className='homeScreen'>
-            {/* <Navbar /> */}
             <div className='homeScreenBox'>
                 <div className='hero'>
                     <h1>Welcome to ExpensXpert !</h1>
@@ -24,7 +22,6 @@ export function Home() {
                     <button className='startButton'>Start Tracking </button>
                 </div>
             </div>
-
         </div>
     )
 }

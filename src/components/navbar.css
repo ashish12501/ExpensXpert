@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     height: 15vh;
+    /* max-height: 15vh; */
     padding: 0px 70px 0 70px;
 }
 
@@ -19,9 +20,14 @@
     justify-content: center;
 }
 
-.navbuttons img {
+.navbuttons .profilePic {
     height: 30px;
-    margin-right: 7px;
+    margin-right: 27px;
+}
+
+.navbuttons .listIcon {
+    height: 33px;
+    margin-right: 15px;
 }
 
 .loginButton,
