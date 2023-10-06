@@ -1,19 +1,19 @@
-// import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './home.css'
-// import { useNavigate } from 'react-router-dom'
-// import { AppContext } from '../../App'
+import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../../App'
 
 
 export function Home() {
-    // const { userData } = useContext(AppContext)
-    // const navigate = useNavigate();
+    const { userData } = useContext(AppContext)
+    const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     if (userData) {
-    //         navigate("/tracker")
-    //     }
-    // })
+    useEffect(() => {
+        if (userData) {
+            navigate("/tracker")
+        }
+    })
     return (
         <div className='homeScreen'>
             <div className='homeScreenBox'>
