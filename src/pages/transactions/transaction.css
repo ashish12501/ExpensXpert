@@ -1,0 +1,48 @@
+.transactions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: calc(100vh-13vh); */
+    /* height: 100vh-13vh; */
+    height: 87vh;
+    /* background-image: url('../../images/wall.png'); */
+}
+
+.transactionsBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 60vw;
+}
+
+.transactionsBox ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+}
+
+.transactionsBox li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    padding: 0px 70px 0 70px;
+    background-color: rgba(0, 0, 0, 0.12);
+    color: white;
+    backdrop-filter: blur(5px);
+    width: 70%;
+    border: 1px solid rgb(72, 23, 100);
+}
+
+.transactionsBox .transAmount {
+    font-weight: 700;
+}

@@ -5,7 +5,7 @@
 }
 
 .homeScreen {
-    height: calc(100vh - 15vh)
+    height: calc(100vh - 13vh)
 }
 
 .homeScreenBox {
@@ -30,13 +30,23 @@
 .startButton {
     font-size: 1.3rem;
     /* color: yellow; */
-    color: white;
     border: 3px solid yellow;
     padding: 9px 12px;
     border-radius: 5px;
     background-color: transparent;
     font-weight: 700;
 }
+
+.startButton .startButtonLink {
+    color: white;
+    text-decoration: none;
+}
+
+.startButton .startButtonLink:hover {
+    color: black;
+    text-decoration: none;
+}
+
 
 .startButton:hover {
     color: black;

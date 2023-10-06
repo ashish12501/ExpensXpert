@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 15vh;
-    /* max-height: 15vh; */
+    height: 13vh;
     padding: 0px 70px 0 70px;
+    background-color: rgba(0, 0, 0, 0.12);
+    color: white;
+    backdrop-filter: blur(5px);
 }
+
 
 .navbarLogo {
     display: flex;
@@ -22,12 +25,14 @@
 
 .navbuttons .profilePic {
     height: 30px;
-    margin-right: 27px;
+    padding: 0 26px 0 26px;
+    margin-left: 20px;
+    border-left: 0.5px solid white;
 }
 
 .navbuttons .listIcon {
-    height: 33px;
-    margin-right: 15px;
+    height: 24px;
+    margin-right: 20px;
 }
 
 .loginButton,
