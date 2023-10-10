@@ -2,14 +2,15 @@ import React, { useState, useContext } from 'react'
 import { useAddTransacation } from '../../hooks/useAddTransaction'
 import { AppContext } from '../../App';
 import './tracker.css'
+import { useCalculateBalance } from '../../hooks/useCalculateBalance'
 
 
 export function Tracker() {
   const { userData } = useContext(AppContext);
+  const { balance } = useCalculateBalance();
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
   const [type, setType] = useState("expence");
-
 
   const { addTransacation } = useAddTransacation();
 
@@ -34,8 +35,9 @@ export function Tracker() {
         <div className='container'>
           <h1 className='userName'>{userName}'s <span>Expence Tracker</span></h1>
           <div className='balance'>
-            <h3>Current Balanace:</h3>
-            <h2>₹ 23</h2>
+            <h3>Current Balance:</h3>
+            {balance !== null ? <h2>₹ {balance}</h2> : <p>Loading balance...</p>}
+
           </div>
         </div>
         <form className='addTransacation' onSubmit={submitTransaction} >
