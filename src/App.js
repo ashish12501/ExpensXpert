@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Tracker } from './pages/expens-tracker/Tracker'
 import { Home } from './pages/home/index'
 import { Navbar } from './components/Navbar'
@@ -13,16 +13,23 @@ export const AppContext = createContext();
 
 function App() {
   const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setUserData(user)
-    })
-  })
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUserData(user);
+      setLoading(false); // Set loading to false when authentication status is checked
+    });
+
+    return () => {
+      unsubscribe(); // Unsubscribe from the auth state listener when the component unmounts
+    };
+  }, []);
+
 
   return (
     <div className="App">
-      <AppContext.Provider value={{ userData }}>
+      <AppContext.Provider value={{ userData, loading }}>
         <Router>
           <Navbar />
           <Routes>

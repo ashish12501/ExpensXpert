@@ -6,14 +6,20 @@ import { AppContext } from '../../App'
 
 
 export function Home() {
-    const { userData } = useContext(AppContext)
+    const { userData, loading } = useContext(AppContext)
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (userData) {
-            navigate("/tracker")
+        if (!loading) {
+            if (userData) {
+                navigate("/tracker");
+            } else {
+                navigate("/");
+            }
         }
-    })
+    }, [userData, loading, navigate]);
+
+
     return (
         <div className='homeScreen'>
             <div className='homeScreenBox'>
