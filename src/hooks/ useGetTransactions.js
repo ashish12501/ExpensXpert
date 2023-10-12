@@ -18,8 +18,7 @@ export const useGetTransactions = () => {
             const queryTransactions = query(
                 addTransactionCollectionRef,
                 where("userID", "==", UserID),
-                orderBy("createdAt", "desc") // Change this line to orderBy("createdAt", "desc")
-                // orderBy("createdAt")
+                orderBy("createdAt", "desc")
             );
 
             unsubscribe = onSnapshot(queryTransactions, (snapshot) => {
@@ -41,7 +40,6 @@ export const useGetTransactions = () => {
                 })
                 setTransactions(docs)
                 setTotalTransaction(totalIncome - totalExoence);
-                console.log(totalIncome - totalExoence)
             })
         }
         catch (err) {
@@ -52,7 +50,7 @@ export const useGetTransactions = () => {
 
     useEffect(() => {
         getTransactions();
-    }, []) // Add an empty dependency array to run the effect only once
+    }, [])
 
     return { transactions, totalTransaction }
 }
