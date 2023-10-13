@@ -89,4 +89,21 @@
         font-size: 0.9rem;
         color: aliceblue;
     }
+
+    .navbuttons {}
+
+    .navbuttons .profilePic {
+        height: 27px;
+        padding: 0 0px 0 26px;
+    }
+
+    .navbuttons .listIcon {
+        height: 20px;
+        margin-right: 18px;
+    }
+
+    .navbuttons .profilePic {
+        margin-left: 15px;
+        border-left: 0.3px solid white;
+    }
 }

@@ -151,3 +151,30 @@ label {
 .income-expence .income {
     line-height: 0;
 }
+
+@media (max-width: 420px) {
+    .tracker .container .userName {
+        font-size: 5.9vw;
+
+    }
+
+    .tracker .container {
+        width: 85vw;
+    }
+
+    /* .tracker .container .userName {
+        font-size: 3vw;
+        font-weight: 600;
+        line-height: 0;
+        margin-bottom: 30px;
+    } */
+
+    .tracker .container .userName span {
+        font-size: 6vw;
+        font-weight: 400;
+    }
+
+    .inputBlock2 {
+        flex-direction: column;
+    }
+}

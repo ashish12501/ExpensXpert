@@ -8,6 +8,7 @@ import logout from '../images/logout.png'
 import home from '../images/home.png'
 import { getAuth, signOut } from "firebase/auth";
 import { useLocation } from 'react-router-dom'
+import user2 from '../images/user2.png'
 
 export function Navbar() {
     const location = useLocation();
@@ -42,7 +43,7 @@ export function Navbar() {
                         )}
 
 
-                        <img src={userData.photoURL} alt='' className='profilePic' />
+                        <img src={userData.photoURL ? userData.photoURL : user2} alt='' className='profilePic' />
                     </div>
                 </div>
             )

@@ -8,7 +8,6 @@ import { auth, provider, fbProvider } from '../../config/firebase-config';
 import { Footer } from '../../components/footer'
 
 
-
 import { signInWithPopup } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
 export function Login() {
