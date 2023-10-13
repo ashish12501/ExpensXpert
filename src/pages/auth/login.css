@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     align-items: center;
-    height: 85vh;
+    height: calc(100vh - 21vh);
 }
 
 .registerpage .registerform {
@@ -81,6 +81,11 @@
 @media (max-width: 780px) {}
 
 @media (max-width: 480px) {
+
+    .registerpage {
+        height: calc(100vh - 19.5vh);
+    }
+
     .registerpage .registerform h1 {
         font-size: 23px;
     }
@@ -88,6 +93,10 @@
     .registerpage .registerform {
         padding: 25px 28px;
 
+    }
+
+    .registerpage .registerform .loginButtons button {
+        width: 65vw;
     }
 
     .registerpage .registerform .terms {
