@@ -32,7 +32,7 @@ export function Navbar() {
                         <Link to={"/"}><img src={logout} alt="" className='listIcon' onClick={Logout} /></Link>
 
                         {location.pathname === "/transaction-history" ? (
-                            <Link to={"/transaction-history"}>
+                            <Link to={"/"}>
                                 <img src={home} alt="" className='listIcon' />
                             </Link>
                         ) : (
@@ -54,7 +54,7 @@ export function Navbar() {
                 <div className='navbarLogo'><img src={logo} alt="logo" /></div>
                 <div className='navbuttons'>
                     <Link className='loginButton' to='/login'>Login</Link>
-                    <Link className='registerButton' to='/register'>Register</Link>
+                    <Link className='registerButton' to='/login'>Register</Link>
                 </div>
             </div>
         )

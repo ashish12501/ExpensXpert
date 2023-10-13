@@ -11,7 +11,7 @@ export function Tracker() {
   const [amount, setAmount] = useState(0);
   const [type, setType] = useState("expence");
   const { addTransacation } = useAddTransacation();
-  const { totalTransaction } = useGetTransactions();
+  const { totalTransaction, totalExpence, totalIncome } = useGetTransactions();
 
   const submitTransaction = (e) => {
     e.preventDefault();
@@ -41,8 +41,12 @@ export function Tracker() {
           <div className='balance'>
             <h3>Current Balance:</h3>
             {totalTransaction !== null ? <h2>₹ {totalTransaction}</h2> : <p>Loading balance...</p>}
-
           </div>
+          <div className='income-expence'>
+            <h4 className='expence'>Total Expence: ₹ {totalExpence}</h4>
+            <h4 className='income'>Total Income: ₹ {totalIncome}</h4>
+          </div>
+
         </div>
         <form className='addTransacation' onSubmit={submitTransaction} >
           <h2 className='addtransinfo'>Add New Transaction</h2>

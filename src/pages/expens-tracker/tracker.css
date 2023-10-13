@@ -137,3 +137,17 @@ label {
     padding: 9px 19px;
 
 }
+
+.income-expence {
+    display: flex;
+    flex-direction: row;
+}
+
+.income-expence .expence {
+    margin-right: 2vw;
+    line-height: 0;
+}
+
+.income-expence .income {
+    line-height: 0;
+}

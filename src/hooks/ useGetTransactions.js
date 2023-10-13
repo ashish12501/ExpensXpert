@@ -9,6 +9,9 @@ export const useGetTransactions = () => {
     const UserID = userData.uid;
     const [transactions, setTransactions] = useState([])
     const [totalTransaction, setTotalTransaction] = useState(0)
+    const [totalIncome, setTotalIncome] = useState(0)
+    const [totalExpence, setTotalExpence] = useState(0)
+
 
     const addTransactionCollectionRef = collection(db, "transactions")
 
@@ -39,6 +42,8 @@ export const useGetTransactions = () => {
                     }
                 })
                 setTransactions(docs)
+                setTotalIncome(totalIncome);
+                setTotalExpence(totalExoence);
                 setTotalTransaction(totalIncome - totalExoence);
             })
         }
@@ -52,5 +57,5 @@ export const useGetTransactions = () => {
         getTransactions();
     }, [])
 
-    return { transactions, totalTransaction }
+    return { transactions, totalTransaction, totalExpence, totalIncome }
 }
