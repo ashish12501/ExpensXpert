@@ -43,8 +43,8 @@ export function Tracker() {
             {totalTransaction !== null ? <h2>₹ {totalTransaction}</h2> : <p>Loading balance...</p>}
           </div>
           <div className='income-expence'>
-            <h4 className='expence'>Total Expence: ₹ {totalExpence}</h4>
-            <h4 className='income'>Total Income: ₹ {totalIncome}</h4>
+            <h4 className='expence'>Total Expence: ₹ <span style={{ color: "red" }}>{totalExpence}</span></h4>
+            <h4 className='income'>Total Income: ₹ <span style={{ color: "green" }}>{totalIncome}</span></h4>
           </div>
 
         </div>

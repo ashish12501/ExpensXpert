@@ -5,7 +5,7 @@
     align-items: center;
     height: 13vh;
     padding: 0px 70px 0 70px;
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: rgba(0, 0, 0, 0.158);
     color: white;
     backdrop-filter: blur(5px);
 }
@@ -40,12 +40,22 @@
     margin-right: 20px;
 }
 
-.loginButton,
+.loginButton {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 .registerButton {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 700;
+    border: 2px solid yellow;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 20px;
 }
 
 .loginButton,
@@ -53,9 +63,30 @@
     cursor: pointer;
 }
 
-.registerButton {
+/* .registerButton {
     border: 2px solid yellow;
     padding: 7px 10px;
     border-radius: 5px;
     margin-left: 25px;
+} */
+
+@media (max-width: 420px) {
+    .Navbar {
+        height: 9vh;
+        padding: 0px 20px 0 20px;
+
+    }
+
+    .navbarLogo img {
+        height: 10.5vw;
+    }
+
+    .loginButton {
+        display: none;
+    }
+
+    .registerButton {
+        font-size: 0.9rem;
+        color: aliceblue;
+    }
 }
