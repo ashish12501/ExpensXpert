@@ -70,7 +70,7 @@
     margin-left: 25px;
 } */
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
     .Navbar {
         height: 9vh;
         padding: 0px 20px 0 20px;

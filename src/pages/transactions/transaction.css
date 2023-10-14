@@ -61,7 +61,7 @@
 
 
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
     .transactionsBox {
         width: 94vw;
     }
@@ -77,4 +77,11 @@
         font-size: 3vw;
     }
 
+    #dateTime {
+        font-size: 2.5vw;
+    }
+
+    .transactions {
+        height: 77vh;
+    }
 }

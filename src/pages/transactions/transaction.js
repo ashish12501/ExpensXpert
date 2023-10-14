@@ -1,6 +1,7 @@
 import React from 'react'
 import { useGetTransactions } from '../../hooks/ useGetTransactions'
 import './transaction.css'
+import { Footer } from '../../components/footer'
 
 export function Transaction() {
     const { transactions } = useGetTransactions();
@@ -45,7 +46,7 @@ export function Transaction() {
                                     <li>
                                         <div className='descriptionDate'>
                                             <p className='des' style={{ textAlign: "left" }}>{description}</p>
-                                            <p className='dateTime' >{date} at {time} </p>
+                                            <p className='dateTime' id="dateTime">{date} at {time} </p>
                                         </div>
                                         <p style={{ color: "red" }} className="transAmount" >- {amount}</p>
                                     </li>
@@ -57,7 +58,7 @@ export function Transaction() {
                                     <li>
                                         <div className='descriptionDate'>
                                             <p className='des' style={{ textAlign: "left" }}>{description}</p>
-                                            <p className='dateTime'>{date} at {time} </p>
+                                            <p className='dateTime' id="dateTime">{date} at {time} </p>
                                         </div>
                                         <p style={{ color: "green" }} className="transAmount">+ {amount}</p>
                                     </li>
@@ -68,6 +69,7 @@ export function Transaction() {
                     </ul>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
