@@ -30,44 +30,45 @@ export function Transaction() {
     };
 
     return (
-        <div className='transactions'>
-            <div className='transactionsBox'>
-                <h2>Transactions</h2>
-                <ul>
-                    {transactions.map((transaction) => {
-                        const { description, amount, type, createdAt } = transaction
+        <>
+            <div className='transactions'>
+                <div className='transactionsBox'>
+                    <h2>Transactions</h2>
+                    <ul>
+                        {transactions.map((transaction) => {
+                            const { description, amount, type, createdAt } = transaction
 
-                        const { date, time } = formatDateTime(createdAt);
+                            const { date, time } = formatDateTime(createdAt);
 
-                        if (type === 'expence') {
-                            return (
-                                <li>
-                                    <div className='descriptionDate'>
-                                        <p className='des' style={{ textAlign: "left" }}>{description}</p>
-                                        <p className='dateTime' >{date} at {time} </p>
-                                    </div>
-                                    <p style={{ color: "red" }} className="transAmount" >- {amount}</p>
-                                </li>
-                            )
-                        }
-                        else {
-                            return (
+                            if (type === 'expence') {
+                                return (
+                                    <li>
+                                        <div className='descriptionDate'>
+                                            <p className='des' style={{ textAlign: "left" }}>{description}</p>
+                                            <p className='dateTime' >{date} at {time} </p>
+                                        </div>
+                                        <p style={{ color: "red" }} className="transAmount" >- {amount}</p>
+                                    </li>
+                                )
+                            }
+                            else {
+                                return (
 
-                                <li>
-                                    <div className='descriptionDate'>
-                                        <p className='des' style={{ textAlign: "left" }}>{description}</p>
-                                        <p className='dateTime'>{date} at {time} </p>
-                                    </div>
-                                    <p style={{ color: "green" }} className="transAmount">+ {amount}</p>
-                                </li>
-                            )
-                        }
+                                    <li>
+                                        <div className='descriptionDate'>
+                                            <p className='des' style={{ textAlign: "left" }}>{description}</p>
+                                            <p className='dateTime'>{date} at {time} </p>
+                                        </div>
+                                        <p style={{ color: "green" }} className="transAmount">+ {amount}</p>
+                                    </li>
+                                )
+                            }
 
-                    })}
-                </ul>
+                        })}
+                    </ul>
+                </div>
             </div>
-
-        </div>
+        </>
     )
 }
 

@@ -14,8 +14,6 @@ font-family: 'Poppins', sans-serif; */
     align-items: center;
     flex-direction: column;
     padding: 0px 0 0px 20px;
-
-
 }
 
 .tracker .container {
@@ -103,7 +101,6 @@ input[type="number"] {
     border-radius: 5px;
     color: yellow;
     padding: 10px;
-
 }
 
 .radio {
@@ -153,28 +150,76 @@ label {
 }
 
 @media (max-width: 420px) {
-    .tracker .container .userName {
-        font-size: 5.9vw;
 
+
+    .tracker {
+        padding: 0;
+        height: calc(100vh - 23vh);
+    }
+
+    .tracker .container .userName {
+        font-size: 5.2vw;
+        font-weight: 700;
     }
 
     .tracker .container {
         width: 85vw;
     }
 
-    /* .tracker .container .userName {
-        font-size: 3vw;
-        font-weight: 600;
-        line-height: 0;
-        margin-bottom: 30px;
-    } */
-
     .tracker .container .userName span {
-        font-size: 6vw;
+        font-size: 4.5vw;
         font-weight: 400;
     }
 
     .inputBlock2 {
         flex-direction: column;
     }
+
+    .tracker .container .balance h3 {
+        font-size: 5vw;
+        font-weight: 500;
+    }
+
+    .tracker .container .balance h2 {
+        font-size: 4.7vw;
+    }
+
+
+
+    .income-expence {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .income-expence .expence {
+        margin-right: 0vw;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    .income-expence .income {
+        line-height: 0;
+        margin-top: 4px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    .tracker .addTransacation {
+        width: 85vw;
+        height: 35vh;
+        margin-top: -15px;
+    }
+
+    .tracker .addTransacation .addtransinfo {
+        margin-left: 15vw;
+        font-size: 4.5vw;
+    }
+
+    .radio {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+
 }
