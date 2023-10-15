@@ -3,6 +3,7 @@ import './home.css'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../App'
 import { Footer } from '../../components/footer'
+import { Grid } from 'react-loader-spinner'
 
 export function Home() {
     const { userData, loading } = useContext(AppContext)
@@ -26,20 +27,42 @@ export function Home() {
         }
     }
 
-    return (
-        <>
-            <div className='homeScreen'>
-                <div className='homeScreenBox'>
-                    <div className='hero'>
-                        <h1>Welcome to ExpensXpert!</h1>
-                        <h3>An efficient way to add, view, edit, delete and track your expenses.</h3>
-                        <button className='startButton' onClick={startTracking}>Start Tracking</button>
-                    </div>
+
+    if (loading) {
+        return (
+            <div className='LoaderBox'>
+                <div className="Loader">
+                    <Grid
+                        height="40"
+                        width="40"
+                        color="#f4f4f4"
+                        ariaLabel="grid-loading"
+                        radius="12.5"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                    />
                 </div>
-            </div >
-            <Footer />
-        </>
-    )
+            </div>
+        )
+    }
+    else {
+        return (
+            <>
+                <div className='homeScreen'>
+                    <div className='homeScreenBox'>
+                        <div className='hero'>
+                            <h1>Welcome to ExpensXpert!</h1>
+                            <h3>An efficient way to add, view, edit, delete and track your expenses.</h3>
+                            <button className='startButton' onClick={startTracking}>Start Tracking</button>
+                        </div>
+                    </div>
+                </div >
+                <Footer />
+            </>
+        )
+    }
+
 }
 
 
