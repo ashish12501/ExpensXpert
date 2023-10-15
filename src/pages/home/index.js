@@ -27,15 +27,14 @@ export function Home() {
         }
     }
 
-
     if (loading) {
         return (
             <div className='LoaderBox'>
                 <div className="Loader">
                     <Grid
-                        height="40"
-                        width="40"
-                        color="#f4f4f4"
+                        height="45"
+                        width="45"
+                        color="#ffffff"
                         ariaLabel="grid-loading"
                         radius="12.5"
                         wrapperStyle={{}}

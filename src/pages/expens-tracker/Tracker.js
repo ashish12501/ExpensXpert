@@ -4,9 +4,11 @@ import { AppContext } from '../../App';
 import './tracker.css'
 import { useGetTransactions } from '../../hooks/ useGetTransactions'
 import { Footer } from "../../components/footer"
+import { useNavigate } from 'react-router-dom';
 
 
 export function Tracker() {
+  const navigate = useNavigate();
   const { userData } = useContext(AppContext);
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
@@ -25,7 +27,9 @@ export function Tracker() {
     setAmount(0)
   }
 
-
+  const TransHistory = () => {
+    navigate('/transaction-history')
+  }
 
   let userName = "GuestUser";
   if (userData) {
@@ -43,10 +47,9 @@ export function Tracker() {
               {totalTransaction !== null ? <h2>₹ {totalTransaction}</h2> : <p>Loading balance...</p>}
             </div>
             <div className='income-expence'>
-              <h4 className='expence'>Total Expence: ₹ <span style={{ color: "red" }}>{totalExpence}</span></h4>
-              <h4 className='income'>Total Income: ₹ <span style={{ color: "green" }}>{totalIncome}</span></h4>
+              <h4 className='expence'>Total Expence: ₹  <span style={{ color: "red" }}>{totalExpence}</span></h4>
+              <h4 className='income'>Total Income: ₹  <span style={{ color: "green" }}>{totalIncome}</span></h4>
             </div>
-
           </div>
           <form className='addTransacation' onSubmit={submitTransaction} >
             <h2 className='addtransinfo'>Add New Transaction</h2>
@@ -65,7 +68,10 @@ export function Tracker() {
                 </div>
               </div>
             </div>
-            <button type='submit'>Add Transaction </button>
+            <div className='submitButtons'>
+              <button type='submit'>Add Transaction </button>
+              <button className='TransationHistory' onClick={TransHistory}> Show Transactions</button>
+            </div>
           </form>
         </div>
         <Footer />

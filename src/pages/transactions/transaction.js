@@ -1,7 +1,7 @@
-import React from 'react'
-import { useGetTransactions } from '../../hooks/ useGetTransactions'
-import './transaction.css'
-import { Footer } from '../../components/footer'
+import React from 'react';
+import { useGetTransactions } from '../../hooks/ useGetTransactions';
+import './transaction.css';
+import { Footer } from '../../components/footer';
 
 export function Transaction() {
     const { transactions } = useGetTransactions();
@@ -36,41 +36,27 @@ export function Transaction() {
                 <div className='transactionsBox'>
                     <h2>Transactions</h2>
                     <ul>
-                        {transactions.map((transaction) => {
-                            const { description, amount, type, createdAt } = transaction
-
-                            const { date, time } = formatDateTime(createdAt);
-
-                            if (type === 'expence') {
+                        {transactions.length > 0 ? (
+                            transactions.map((transaction) => {
+                                const { description, amount, type, createdAt } = transaction;
+                                const { date, time } = formatDateTime(createdAt);
                                 return (
-                                    <li>
+                                    <li key={transaction.id}>
                                         <div className='descriptionDate'>
                                             <p className='des' style={{ textAlign: "left" }}>{description}</p>
                                             <p className='dateTime' id="dateTime">{date} at {time} </p>
                                         </div>
-                                        <p style={{ color: "red" }} className="transAmount" >- {amount}</p>
+                                        <p style={{ color: type === 'expence' ? "red" : "green" }} className="transAmount">{type === 'expence' ? '- ' : '+ '}{amount}</p>
                                     </li>
-                                )
-                            }
-                            else {
-                                return (
-
-                                    <li>
-                                        <div className='descriptionDate'>
-                                            <p className='des' style={{ textAlign: "left" }}>{description}</p>
-                                            <p className='dateTime' id="dateTime">{date} at {time} </p>
-                                        </div>
-                                        <p style={{ color: "green" }} className="transAmount">+ {amount}</p>
-                                    </li>
-                                )
-                            }
-
-                        })}
+                                );
+                            })
+                        ) : (
+                            <h4>No Transactions to show, first make some transactions then visit this page</h4>
+                        )}
                     </ul>
                 </div>
             </div>
             <Footer />
         </>
-    )
+    );
 }
-
