@@ -78,6 +78,14 @@
     margin-top: 20px;
 }
 
+.factive {
+    margin-top: 20px;
+    background-color: grey;
+}
+
+.loginButtons .active {
+    background-color: grey;
+}
 
 @media (max-width: 520px) {
 
